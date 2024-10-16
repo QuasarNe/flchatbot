@@ -56,7 +56,7 @@ def 绘图系统():
         if Q=='n':break
 
 cp.cop("flchatbot")
-x=input("请键入以开始对话……\n")
+x=input("请键入以开始对话……")
 #x='函数'
 while(True):
     run=0
