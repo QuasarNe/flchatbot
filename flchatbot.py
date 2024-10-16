@@ -64,7 +64,7 @@ while(True):
     initialize()
     for word, part in words:
         i=0
-        if word==('函数' or 'func' or 'function'):
+        if word=='函数' or 'func' in word:
             绘图系统()
             break
         if 'n' in part and part!='eng':
@@ -79,6 +79,7 @@ while(True):
                 break
             else:
                 print(f"我不知道{word}是什么，你能说说吗？")
+                run=True
         elif part=='l': 
             print(word)
             run=True
