@@ -7,4 +7,4 @@
 
 Your suggestions will be greatly appreciated.
 
-目前加入了特色功能：**参数方程绘制**（输入`函数`即可使用，当然函数图像也可画）
+目前加入了特色功能：**参数方程绘制**（输入`函数``func[tion]`即可使用，当然函数图像也可画）
