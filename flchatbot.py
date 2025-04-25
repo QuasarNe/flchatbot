@@ -45,7 +45,7 @@ def 绘图系统():
             print('指数符号**，平方根函数sqrt()，请开始表达式输入（自变量为x）y=',end='')
             f = input()
             for i in range(1,len(f)):
-                if 'a'<f[i]<'z':
+                if 'a'<f[i]<'z' and 'y' not in f:
                     v=f[i]
                 else:v='x'
                 y=value(f,'x')
