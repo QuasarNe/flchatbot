@@ -24,9 +24,9 @@ def 绘图系统():
     import matplotlib.pyplot as plt
     import numpy as np
     import sympy as sp
-    def value(c,op):
+    def value(c,virable):
         global t
-        symbol=sp.Symbol(op)
+        symbol=sp.Symbol(virable)
         expr=sp.sympify(c)
         f = sp.lambdify(symbol, expr, "numpy")
         t=np.linspace(-10,10,100)
@@ -42,13 +42,14 @@ def 绘图系统():
             plt.plot(x,y)
             plt.show()
         elif(op=='b'):
-            print('指数符号**，平方根函数sqrt()，请开始你的输入：')
+            print('指数符号**，平方根函数sqrt()，请开始表达式输入：')
             f = input()
             for i in range(0,len(f)):
-                if('a'<f[i]<'z'):
-                    symbol=f[i]
-                else:print('无效输入')
-            y=value(f,symbol)
+                if 'a'<f[0]<'z':
+                    continue
+                elif 'a'<f[i]<'z':
+                    v=f[i]
+            y=value(f[2:],v)
             plt.figure()
             plt.plot(t,y)
             plt.show()    
@@ -56,10 +57,10 @@ def 绘图系统():
         if Q=='n':break
 
 cp.cop("flchatbot")
-x=input("请键入以开始对话……\n")
+x=input("请键入以开始对话……\n>")
 #x='函数'
 while(True):
-    run=0
+    run=False
     words = pseg.lcut(x)
     initialize()
     for word, part in words:
@@ -85,8 +86,8 @@ while(True):
             run=True
         
     if run!=True:
-        if (len(words))<=1:print(f'{x}甚？')
+        if (len(words))<=1:print(f'{x}甚')
         else:print("Knowledge is power of the world,I'll learn more")
     #print(words)
     #print('rv=',rv,len(words),word)
-    x=input()
+    x=input('>')
