@@ -42,19 +42,18 @@ def 绘图系统():
             plt.plot(x,y)
             plt.show()
         elif(op=='b'):
-            print('指数符号**，平方根函数sqrt()，请开始表达式输入：')
+            print('指数符号**，平方根函数sqrt()，请开始表达式输入（自变量为x）y=',end='')
             f = input()
-            for i in range(0,len(f)):
-                if 'a'<f[0]<'z':
-                    continue
-                elif 'a'<f[i]<'z':
+            for i in range(1,len(f)):
+                if 'a'<f[i]<'z':
                     v=f[i]
-            y=value(f[2:],v)
-            plt.figure()
-            plt.plot(t,y)
-            plt.show()    
-        Q=input('继续吗？(Y/n)')
-        if Q=='n':break
+                else:v='x'
+                y=value(f,'x')
+                plt.figure()
+                plt.plot(t,y)
+                plt.show()    
+                Q=input('继续吗？(Y/n)')
+                if Q=='n':break
 
 cp.cop("flchatbot")
 x=input("请键入以开始对话……\n>")
