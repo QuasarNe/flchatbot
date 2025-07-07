@@ -1,5 +1,5 @@
 import jieba.posseg as pseg
-import COPYRIGHT as cp
+#import COPYRIGHT as cp
 rv=1
 j=False
 def initialize():
@@ -56,7 +56,7 @@ def 绘图系统():
         Q=input('继续吗？(Y/n)')
         if Q=='n':break
 
-cp.cop("flchatbot")
+#cp.cop("flchatbot")
 x=input("请键入以开始对话……\n>")
 while(True):
     run=False
