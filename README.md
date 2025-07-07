@@ -5,6 +5,7 @@
 
 如果您有任何建议，万望补充
 
-Your suggestions will be greatly appreciated.
+Your suggestions is highly expected.
 
 目前加入了特色功能：**参数方程绘制**（输入`函数`/`func[tion]`即可使用，当然函数图像也可画）
+使用时需要有 `jieba``matplotlib``numpy``sympy` 模块
