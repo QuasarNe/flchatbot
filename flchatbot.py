@@ -23,10 +23,10 @@ def 绘图系统():
     import matplotlib.pyplot as plt
     import numpy as np
     import sympy as sp
-    def value(c,virable):
+    def value(e,s):
         global t
-        symbol=sp.Symbol(virable)
-        expr=sp.sympify(c)
+        symbol=sp.Symbol(s)
+        expr=sp.sympify(e)
         f = sp.lambdify(symbol, expr, "numpy")
         t = np.linspace(-10,10,100)
         return f(t)
@@ -34,14 +34,14 @@ def 绘图系统():
     op=input('函数(b) 参数方程(c)') 
     while(True):
         if(op=='c'):
-            print('参数名为t，指数符号**，平方根函数sqrt()，请开始你的输入：')
+            print('参数名为t，请开始你的输入：')
             x=value(input("x="),'t')
             y=value(input('y='),'t')         
             plt.figure()
             plt.plot(x,y)
             plt.show()
         elif(op=='b'):
-            print('指数符号**，平方根函数sqrt()，请开始表达式输入（自变量为x）y=',end='')
+            print('请开始表达式输入（自变量为x）y=',end='')
             f = input()
             v='x'
             for i in range(1,len(f)):
@@ -53,8 +53,8 @@ def 绘图系统():
                 plt.figure()
                 plt.plot(t,y)
                 plt.show()    
-                Q=input('继续吗？(Y/n)')
-                if Q=='n':break
+        Q=input('继续吗？(Y/n)')
+        if Q=='n':break
 
 cp.cop("flchatbot")
 x=input("请键入以开始对话……\n>")
