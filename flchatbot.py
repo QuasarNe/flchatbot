@@ -1,4 +1,3 @@
-import jieba
 import jieba.posseg as pseg
 import COPYRIGHT as cp
 rv=1
@@ -29,7 +28,7 @@ def 绘图系统():
         symbol=sp.Symbol(virable)
         expr=sp.sympify(c)
         f = sp.lambdify(symbol, expr, "numpy")
-        t=np.linspace(-10,10,100)
+        t = np.linspace(-10,10,100)
         return f(t)
     
     op=input('函数(b) 参数方程(c)') 
@@ -50,7 +49,7 @@ def 绘图系统():
                     if f[i]=='y':
                         f[i]='x'
                     v=f[i]
-                y=value(f,'x')
+                y=value(f,v)
                 plt.figure()
                 plt.plot(t,y)
                 plt.show()    
@@ -59,7 +58,6 @@ def 绘图系统():
 
 cp.cop("flchatbot")
 x=input("请键入以开始对话……\n>")
-#x='函数'
 while(True):
     run=False
     words = pseg.lcut(x)
@@ -73,10 +71,8 @@ while(True):
             if part=='ns' or 'nr':
                 run=True   
                 lw=word
-                if(rv>1 and lw==words[i].word): continue
-                else:print(f'跟我聊聊{word}')
-                if(rv>1):评价系统(word)
-                rv+=1
+                if(i>0 and lw==words[i].word): continue
+                print(f'跟我聊聊{word}')
                 i+=1
                 break
             else:
@@ -88,7 +84,7 @@ while(True):
         
     if run!=True:
         if (len(words))<=1:print(f'{x}甚')
-        else:print("Knowledge is power of the world,I'll learn more")
+        else:print("Knowledge is key to the universe,I'll learn more")
     #print(words)
     #print('rv=',rv,len(words),word)
     x=input('>')
