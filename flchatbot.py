@@ -101,7 +101,8 @@ while(True):
     if run!=True:
         if (len(words))<=1:print(f'{x}甚')
         else:print("Knowledge is key to the universe,I'll learn more")
-    print(words)
+    #print(words)
     #print('rv=',rv,len(words),word)
     x=input('>')
     sleep(1)
+
